@@ -16,3 +16,10 @@ def monthly_revenue(rows: list[dict]) -> dict[str, float]:
     for r in rows:
         totals[r["date"][:7]] += r["quantity"] * r["unit_price"]
     return {month: round(value, 2) for month, value in sorted(totals.items())}
+
+
+def average_order_value(rows: list[dict]) -> float:
+    """Total revenue divided by the number of orders (one row = one order)."""
+    if not rows:
+        return 0.0
+    return round(total_revenue(rows) / len(rows), 2)

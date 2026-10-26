@@ -17,3 +17,10 @@ def test_total_revenue_empty():
 
 def test_monthly_revenue():
     assert monthly_revenue(ROWS) == {"2024-01": 45.5, "2024-02": 35.0}
+
+
+def test_average_order_value():
+    from sales_analysis import average_order_value
+
+    assert average_order_value(ROWS) == 26.83      # 80.5 / 3 orders
+    assert average_order_value([]) == 0.0
