@@ -25,3 +25,18 @@ python -m pytest
 ## Dependencies
 
 - pytest: runs the tests
+
+## Usage
+
+Install pytest and run the tests:
+
+```bash
+python -m pip install pytest
+python -m pytest
+```
+
+Compute the total revenue of the sales file:
+
+```bash
+PYTHONPATH=src python -c "from sales_analysis import load_sales, total_revenue; print(total_revenue(load_sales('data/sales.csv')))"
+```
